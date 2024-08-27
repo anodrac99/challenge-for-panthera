@@ -1,10 +1,13 @@
 import DinamicInput from "./DinamicInput";
 import UserImage from "./UserImage";
 
-export default function CreatePost () {
-
+export default function CreatePost ({setPost}) {
+    const handleSetPost = (post) => {
+        
+        setPost(post)
+    }
     return <div className="create-post-container">
         <UserImage />
-        <DinamicInput />
+        <DinamicInput setPost={handleSetPost} />
     </div>
 }
