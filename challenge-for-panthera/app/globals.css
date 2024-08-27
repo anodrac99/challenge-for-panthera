@@ -126,9 +126,6 @@ a {
   width: 100%;
   height: 45px;
   margin-left: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #393936;
   border: 2px solid #333;
   border-radius: 35px;
@@ -155,7 +152,9 @@ a {
 }
 
 .emoji-container {
-  height: 100% !important;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
 .emoji-button {
   height: 25px;
@@ -164,8 +163,6 @@ a {
   border: none;
   font-size: 24px;
   cursor: pointer;
-  margin-left: 10px;
-  bottom: 0px;
 }
 
 .emoji-picker {

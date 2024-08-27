@@ -16,7 +16,7 @@ export default function PostCard ({post}) {
                 <img src="./dots-horizontal.png" className="icons-pointer" alt="more options icon" />
             </div>
         </div>
-        <img className='post-image' src={URL.createObjectURL(post.image)} alt="selected image" />
+        { post.image && (<img className='post-image' src={URL.createObjectURL(post.image)} alt="selected image" />)}
         <p className="post-text">{post.text}</p>
         <hr color="#31312E"/>
         <div className="interactions">
