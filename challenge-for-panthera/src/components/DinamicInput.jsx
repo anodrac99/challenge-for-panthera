@@ -23,12 +23,13 @@ const customStyles = {
 
 const DinamicInput = ({setPost}) => {
   const [ postModal, setPostModal ] = useState(false);
-  const [isEnlarged, setIsEnlarged] = useState(false);
-  const [showPicker, setShowPicker] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-  const [selectedImage, setSelectedImage] = useState();
-  const [privacy, setPrivacy] = useState('public');
-  const [ editImage, setEditImage ] = useState(false)
+  const [ isEnlarged, setIsEnlarged ] = useState(false);
+  const [ showPicker, setShowPicker ] = useState(false);
+  const [ inputValue, setInputValue ] = useState('');
+  const [ selectedImage, setSelectedImage ] = useState();
+  const [ privacy, setPrivacy ] = useState('public');
+  const [ editImage, setEditImage ] = useState(false);
+  const [ cropImageModal, setCropImageModal ] = useState(false);
 
   const handleClick = () => {
     setIsEnlarged(!isEnlarged);
@@ -60,14 +61,13 @@ const DinamicInput = ({setPost}) => {
   const handleEdit = () => {
     setPostModal(false)
     setEditImage(true)
+    setCropImageModal(true)
   }
 
   const handleNewImage = (image) => {
     setSelectedImage(image)
     setEditImage(false)
-    console.log(selectedImage);
     setPostModal(true)
-    
   }
 
   const handlePost = () => {
@@ -78,7 +78,11 @@ const DinamicInput = ({setPost}) => {
     }
     
     setPostModal(false)
-    return setPost(data)
+    if(data.text || data.image) {
+      setPost(data)
+    }
+    setInputValue("")
+    setSelectedImage(undefined)
   }
 
   return (
@@ -196,7 +200,7 @@ const DinamicInput = ({setPost}) => {
             </Modal>
         )}
         { editImage && (
-          <ImageEditor src={selectedImage} newImage={handleNewImage} />
+            <ImageEditor src={selectedImage} newImage={handleNewImage} />
         )}
     </div>
   );

@@ -460,3 +460,7 @@ a {
 .pointer {
   cursor: pointer;
 }
+
+.image-editor-container {
+  padding: 15px;
+}

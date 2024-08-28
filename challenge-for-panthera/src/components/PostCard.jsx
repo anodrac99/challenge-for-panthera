@@ -20,15 +20,15 @@ export default function PostCard ({post}) {
         <p className="post-text">{post.text}</p>
         <hr color="#31312E"/>
         <div className="interactions">
-            <span className="interactions-buttons">
+            <span className="interactions-buttons pointer">
                 <img src="./hand.png" alt="like icon" />
                 {`${25} Likes`}
             </span>
-            <span className="interactions-buttons">
+            <span className="interactions-buttons pointer">
                 <img src="./comment-icon.png" alt="comment icon" className="interactions-icons"/>
                 {`${25} Comment`}
             </span>
-            <span  className="interactions-buttons">
+            <span  className="interactions-buttons pointer">
                 <img src="./share-icon.png" alt="share icon" className="interactions-icons"/>
                 {`${10} Share`}
             </span>

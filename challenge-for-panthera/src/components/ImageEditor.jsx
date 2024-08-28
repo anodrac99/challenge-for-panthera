@@ -1,9 +1,9 @@
-import ReactCrop from 'react-image-crop'
+import ReactCrop, {convertToPixelCrop} from 'react-image-crop'
 import 'react-image-crop/dist/ReactCrop.css'
 import { useState } from 'react'
 
 export default function ImageEditor({ src, newImage }) {
-    
+
     const [finalImage, setFinalImage] = useState(src)
     const [crop, setCrop] = useState({
         unit: '%', // Can be 'px' or '%'
@@ -18,8 +18,8 @@ export default function ImageEditor({ src, newImage }) {
   }
 
   return (
-    <div>
-        <ReactCrop onComplete={c => setFinalImage(c)} crop={crop} onChange={c => setCrop(c)}>
+    <div className='image-editor-container'>
+        <ReactCrop onComplete={c => setFinalImage(convertToPixelCrop(c))} crop={crop} onChange={c => setCrop(c)}>
             <img src={URL.createObjectURL(src)} />
         </ReactCrop>
         <button onClick={handleSave}>save</button>
