@@ -8,7 +8,7 @@ export default function Home() {
   const [ posts, setPosts ] = useState([])
 
   const handleSetPost = (post) => {
-    setPosts(prev => [...prev,post])
+    setPosts(prev => [post,...prev])
   }
 
   

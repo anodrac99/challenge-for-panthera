@@ -172,8 +172,6 @@ a {
 }
 
 .add-media-container {
-  margin-top: 15px;
-  margin-left: 10px;
   border-radius: 30px;
   border: #393936 1px solid;
   height: 40px;
@@ -196,13 +194,14 @@ a {
 }
 
 .input-functions-container {
+  width: 100%;
+  margin-top: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .subfunctions {
-  margin-top: 15px;
   width: 50%;
   display: flex;
   justify-content: flex-end;
@@ -299,4 +298,165 @@ a {
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+.Modal {
+  min-height: 500px;
+  max-width: 100vh;
+  position: absolute;
+  right: auto;
+  bottom: auto;
+  background-color: #292927;
+  border-radius: 10px;
+  border: #494946 solid 1px;
+}
+
+.Overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(0, 0, 0, 0.158);
+  transform: translate(-50%, -50%);
+}
+
+.modal-content {
+  display: flex;
+  padding: 10px;
+  gap: 10px;
+}
+
+.modal-card-container {
+  width: 600px;
+  background-color: #292927;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-functions {
+  margin-bottom: 10px;
+}
+
+.control-modal {
+  padding: 20px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: #494946 solid 1px;
+}
+
+.input-modal {
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.modal-input-container {
+  margin-top: 10px;
+  border-radius: 10px;
+  background-color: #393936;
+  padding: 10px;
+}
+
+.modal-input-functions {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-subfunctions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  margin: auto;
+}
+
+.background-image {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.button-container {
+  width: 100%;
+  position: absolute;
+  padding: 10px;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Space between buttons */
+}
+
+
+.button-container > div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-icons {
+  width: 20px;
+  height: 20px;
+}
+
+.close-modal {
+  border: none;
+  background-color: transparent;
+}
+
+.button-add-image {
+  background-color: rgba(0, 0, 0, 0.062); /* Semi-transparent background */
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-edit-image {
+  width: 115px;
+  margin-left: 10px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+}
+.button-delete-image {
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background on hover */
+}
+
+/* Specific button styling (optional) */
+.button1 { background-color: #00000065; }
+.button2 { background-color: #00000065; }
+.button3 { background-color: #00000065; }
+
+.pointer {
+  cursor: pointer;
 }
